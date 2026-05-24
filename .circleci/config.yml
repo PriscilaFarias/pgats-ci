@@ -20,6 +20,13 @@ jobs:
           name: Executando testes e2e
           command: yarn run e2e
       
+      - run:
+          name: Upload da cobertura para Codecov
+          command: |
+            curl -Os https://uploader.codecov.io/latest/linux/codecov
+            chmod +x codecov
+            ./codecov -f reports/coverage/lcov.info
+      
       - store_test_results:
           path: test-results
       
