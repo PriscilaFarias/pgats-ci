@@ -9,6 +9,12 @@ jobs:
       - checkout
       
       - run:
+          name: Instalando dependências do sistema
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y libnspr4 libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libpango-1.0-0 libpangocairo-1.0-0
+      
+      - run:
           name: Instalando dependências
           command: yarn
       
