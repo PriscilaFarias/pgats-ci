@@ -17,6 +17,10 @@ jobs:
           command: yarn playwright install
       
       - run:
+          name: Executando testes unitários com cobertura
+          command: yarn test --coverage
+      
+      - run:
           name: Executando testes e2e
           command: yarn run e2e
       
