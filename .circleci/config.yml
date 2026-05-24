@@ -31,6 +31,9 @@ jobs:
             chmod +x codecov
             ./codecov -f reports/coverage/lcov.info
       
+      - store_artifacts:
+          path: reports/coverage
+      
       - store_test_results:
           path: test-results
       
