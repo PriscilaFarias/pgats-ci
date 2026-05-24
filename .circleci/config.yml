@@ -9,10 +9,6 @@ jobs:
       - checkout
       
       - run:
-          name: Instalando Yarn
-          command: npm install -g yarn
-      
-      - run:
           name: Instalando dependências
           command: yarn
       
