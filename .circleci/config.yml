@@ -1,0 +1,37 @@
+version: 2.1
+
+jobs:
+  e2e-tests:
+    docker:
+      - image: cimg/node:24.0
+    
+    steps:
+      - checkout
+      
+      - run:
+          name: Instalando Yarn
+          command: npm install -g yarn
+      
+      - run:
+          name: Instalando dependências
+          command: yarn
+      
+      - run:
+          name: Instalando Browsers do Playwright
+          command: yarn playwright install
+      
+      - run:
+          name: Executando testes e2e
+          command: yarn run e2e
+      
+      - store_test_results:
+          path: test-results
+      
+      - store_artifacts:
+          path: playwright-report
+
+workflows:
+  version: 2
+  e2e-tests-workflow:
+    jobs:
+      - e2e-tests
