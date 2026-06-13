@@ -1,9 +1,14 @@
 version: 2.1
 
+executors:
+  self-hosted-runner:
+    name: self-hosted/docker
+
 jobs:
   e2e-tests:
-    docker:
-      - image: cimg/node:20.11.0-browsers
+    runner:
+      tags: [pgats-runner]
+    executor: self-hosted-runner
     
     steps:
       - checkout
