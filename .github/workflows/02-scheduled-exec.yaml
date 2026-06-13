@@ -10,8 +10,8 @@ on:
     schedule:
     #cronograma de execução - formato cron
     # 1 - minuto, 2 - hora, 3 - dia do mês, 4 - mês, 5 - dia da semana
-      -cron: '16 39 * * 6' #  toda semana no sábado às 19:35
-    timezone: 'America/Sao_Paulo' # fuso horário
+      -cron: '3 * * * *' #  toda semana no sábado às 19:35
+    
 
 
 #tarefas dentro da pipeline = jobs  
