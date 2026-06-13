@@ -10,7 +10,7 @@ on:
     schedule:
     #cronograma de execução - formato cron
     # 1 - minuto, 2 - hora, 3 - dia do mês, 4 - mês, 5 - dia da semana
-      -cron: '3 * * * *' #  toda semana no sábado às 19:35
+      -cron: '/3 * * * *' #  a cada 3 minutos
     
 
 
