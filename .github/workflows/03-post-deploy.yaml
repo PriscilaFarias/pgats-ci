@@ -1,7 +1,7 @@
 # CI de Nível 01 - Disparo após a conclusão de outa pipeline
 
 # nome da pipeline
-name: 'Execução por Deploy'
+name: 'N3 - Execução por Deploy'
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
@@ -10,7 +10,7 @@ name: 'Execução por Deploy'
 
 on:
   workflow_run:
-    workflows: ['Execução Manual']
+    workflows: [' N1 - Execução Manual']
     types:
       - completed
 
