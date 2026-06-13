@@ -1,5 +1,10 @@
 name: "Scheduled Execution"
 
+# gatilhos / triggers - regras de disparo
+# gatilho manual = workflow_dispatch
+# gatilho agendado = schedule
+# gatilho por conclusão de outra pipeline = workflow_run
+
 on:
   schedule:
     - cron: '*/6 * * * *'
