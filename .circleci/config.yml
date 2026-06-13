@@ -2,12 +2,11 @@ version: 2.1
 
 executors:
   self-hosted-runner:
-    name: self-hosted/docker
+    docker:
+      - image: cimg/node:20.9.0
 
 jobs:
   e2e-tests:
-    runner:
-      tags: [pgats-runner]
     executor: self-hosted-runner
     
     steps:
@@ -49,4 +48,6 @@ workflows:
   version: 2
   e2e-tests-workflow:
     jobs:
-      - e2e-tests
+      - e2e-tests:
+          runner:
+            tags: [pgats-runner]
