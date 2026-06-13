@@ -8,39 +8,39 @@ executors:
 jobs:
   e2e-tests:
     executor: self-hosted-runner
-    
+
     steps:
       - checkout
-      
+
       - run:
           name: Instalando dependências
           command: yarn
-      
+
       - run:
           name: Instalando Browsers do Playwright
           command: yarn playwright install
-      
+
       - run:
           name: Executando testes unitários com cobertura
           command: yarn test --coverage
-      
+
       - run:
           name: Executando testes e2e
           command: yarn run e2e
-      
+
       - run:
           name: Upload da cobertura para Codecov
           command: |
             curl -Os https://uploader.codecov.io/latest/linux/codecov
             chmod +x codecov
             ./codecov -f reports/coverage/lcov.info
-      
+
       - store_artifacts:
           path: reports/coverage
-      
+
       - store_test_results:
           path: test-results
-      
+
       - store_artifacts:
           path: playwright-report
 
